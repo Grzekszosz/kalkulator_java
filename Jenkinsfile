@@ -13,12 +13,15 @@ pipeline {
             steps {
                 // bat 'mvn clean package'
                 sh 'mvn clean package'
-           }
+            }
+        }
     }
     post {
+        always {
+            junit '**/target/surefire-reports/TEST-*.xml'
+        }
         success {
             archiveArtifacts 'target/*.jar'
         }
     }
-}
 }
