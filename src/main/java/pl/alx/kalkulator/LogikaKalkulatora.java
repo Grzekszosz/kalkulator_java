@@ -19,6 +19,6 @@ public class LogikaKalkulatora {
     {
         if (l2==0)
             throw new IllegalArgumentException("Nie dziel przez 0");
-        return l1/l2
+        return l1/l2;
     }
 }
